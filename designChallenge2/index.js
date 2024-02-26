@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const userRoutes = require('./routes/userRoute');
 const blogRoutes = require('./routes/blogRoute');
+const reviewRoutes = require('./routes/reviewRoute')
 const searchRoutes = require('./routes/SearchRoute');
 const  connectToDatabase  = require('./config/database');
 
@@ -19,6 +20,7 @@ app.use(bodyParser.json());
 app.use('/api/users', userRoutes);
 app.use('/api/blogs', blogRoutes);
 app.use('/api/search', searchRoutes);
+app.use('/api/review',reviewRoutes);
 
 // Connect to MongoDB
 connectToDatabase();
